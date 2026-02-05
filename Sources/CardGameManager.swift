@@ -190,17 +190,6 @@ final class CardGameManager {
             }
         }
     }
-    
-    extension Array where Element == Card {
-        func highest() -> Card? {
-            return self.max()
-        }
-
-        var description: String {
-            return self.map { $0.description }.joined(separator: ", ")
-        }
-    }
-
 
     func run() {
         print("Card Game: War")
@@ -212,6 +201,13 @@ final class CardGameManager {
         let game = Game(player1: player1, player2: player2)
         game.play()
     }
-
-    
 }
+extension Array where Element == Card {
+        func highest() -> Card? {
+            return self.max()
+        }
+
+        var description: String {
+            return self.map { $0.description }.joined(separator: ", ")
+        }
+    }
