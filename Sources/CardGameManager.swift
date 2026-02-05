@@ -200,6 +200,16 @@ final class CardGameManager {
 
         let game = Game(player1: player1, player2: player2)
         game.play()
+        
+        let testCards: [Card] = [Card(rank: .five, suit: .hearts), Card(rank: .king, suit: .spades), Card(rank: .three, suit: .diamonds)]
+        print("=== EXTENSION TEST ===")
+        print("Test cards: \(testCards.map { $0.description }.joined(separator: ", "))")
+        if let highest = testCards.highest() {
+            print("Highest card: \(highest.description)")
+        } else {
+            print("Highest card: nil")
+        }
+        print("")
     }
 }
 extension Array where Element == Card {
